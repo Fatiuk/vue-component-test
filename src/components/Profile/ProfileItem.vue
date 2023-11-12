@@ -3,22 +3,22 @@
     <div class="profile-wrap">
       <img class="profile-wrap__image" :src="avatar" :alt="username" />
       <p class="profile-wrap__username">{{ username }}</p>
-      <p class="profile-wrap__tag">@{{ tag }}</p>
+      <p class="profile-wrap__tag">{{ tag }}</p>
       <p class="profile-wrap__location">{{ location }}</p>
     </div>
 
     <ul class="profile-card__list">
       <li class="profile-card__item">
         <span class="profile-card__label">Followers</span>
-        <span class="profile-card__value">{{ followers }}</span>
+        <span class="profile-card__value">{{ stats.followers }}</span>
       </li>
       <li class="profile-card__item">
         <span class="profile-card__label">Views</span>
-        <span class="profile-card__value">{{ views }}</span>
+        <span class="profile-card__value">{{ stats.views }}</span>
       </li>
       <li class="profile-card__item">
         <span class="profile-card__label">Likes</span>
-        <span class="profile-card__value">{{ likes }}</span>
+        <span class="profile-card__value">{{ stats.likes }}</span>
       </li>
     </ul>
   </div>
@@ -116,20 +116,18 @@
 </style>
 
 <script>
-import userData from './user.json'
-
-const { avatar, username, tag, location, followers, views, likes } = userData
-
 export default {
   data() {
     return {
-      avatar,
-      username,
-      tag,
-      location,
-      followers,
-      views,
-      likes
+      avatar: 'https://randomuser.me/api/portraits/men/11.jpg',
+      username: 'John Doe',
+      tag: '@johndoe',
+      location: 'New York, NY',
+      stats: {
+        followers: 8230,
+        views: 42840,
+        likes: 12030
+      }
     }
   }
 }
