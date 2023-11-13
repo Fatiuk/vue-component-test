@@ -11,8 +11,8 @@
       <h1>Project</h1>
     </el-menu-item>
     <div class="flex-grow"></div>
-    <el-menu-item index="/"> Home </el-menu-item>
-    <el-menu-item index="/contacts"> Contacts</el-menu-item>
+    <el-menu-item index="/">Home</el-menu-item>
+    <el-menu-item index="/contacts">Contacts</el-menu-item>
   </el-menu>
 </template>
 

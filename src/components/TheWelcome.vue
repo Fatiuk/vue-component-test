@@ -1,7 +1,7 @@
 <script setup>
-import WelcomeItem from './Profile/ProfileItem.vue'
+import ProfileItem from './Profile/ProfileItem.vue'
 </script>
 
 <template>
-  <WelcomeItem></WelcomeItem>
+  <ProfileItem></ProfileItem>
 </template>
