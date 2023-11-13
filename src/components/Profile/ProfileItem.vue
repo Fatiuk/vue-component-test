@@ -7,18 +7,18 @@
       <p class="profile-wrap__location">{{ location }}</p>
     </div>
 
-    <ul class="profile-card__list">
-      <li class="profile-card__item">
-        <span class="profile-card__label">Followers</span>
-        <span class="profile-card__value">{{ stats.followers }}</span>
+    <ul class="profile-card__list text-neutral-500">
+      <li class="profile-card__item hover:text-emerald-400">
+        <span class="font-bold">Followers</span>
+        <span>{{ stats.followers }}</span>
       </li>
-      <li class="profile-card__item">
-        <span class="profile-card__label">Views</span>
-        <span class="profile-card__value">{{ stats.views }}</span>
+      <li class="profile-card__item hover:text-emerald-400">
+        <span class="font-bold">Views</span>
+        <span>{{ stats.views }}</span>
       </li>
-      <li class="profile-card__item">
-        <span class="profile-card__label">Likes</span>
-        <span class="profile-card__value">{{ stats.likes }}</span>
+      <li class="profile-card__item hover:text-emerald-400">
+        <span class="font-bold">Likes</span>
+        <span>{{ stats.likes }}</span>
       </li>
     </ul>
   </div>
