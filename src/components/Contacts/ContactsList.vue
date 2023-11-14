@@ -9,7 +9,7 @@
       <div class="inline-flex space-x-2 items-center">
         <button
           @click="showModal"
-          class="p-2 border border-stone-200 rounded-md inline-flex space-x-1 items-center hover:bg-stone-200 dark:hover:bg-emerald-500 text-sm hidden md:block"
+          class="p-2 border border-stone-200 rounded-md inline-flex space-x-1 items-center hover:bg-stone-200 dark:hover:bg-emerald-500 text-sm md:block"
         >
           Add Contact
         </button>

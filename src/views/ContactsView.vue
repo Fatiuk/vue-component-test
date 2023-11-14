@@ -1,6 +1,11 @@
 <template>
   <main>
-    <ContactsForm :show="modalVisible" @show-modal="showModal" @close="closeModal" />
+    <ContactsForm
+      :show="modalVisible"
+      @show-modal="showModal"
+      @close="closeModal"
+      @add-contact="addContact"
+    />
     <ContactsList :contacts="contacts" @show-modal="showModal" />
   </main>
 </template>
@@ -27,7 +32,10 @@ export default {
   },
   methods: {
     showModal() {
-      this.modalVisible = !this.modalVisible
+      this.modalVisible = true
+      if (this.modalVisible) {
+        window.scrollTo({ top: 0, behavior: 'smooth' })
+      }
     },
     closeModal() {
       this.modalVisible = false
