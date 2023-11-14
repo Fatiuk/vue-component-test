@@ -1,17 +1,21 @@
 <template>
   <main>
-    <ContactsForm
-      v-if="modalVisible"
-      @show-modal="showModal"
-      @close="closeModal"
-      @add-contact="addContact"
-    />
-    <ContactsList
-      v-else
-      :contacts="contacts"
-      @show-modal="showModal"
-      @delete-contact="deleteContact"
-    />
+    <Transition>
+      <ContactsForm
+        v-if="modalVisible"
+        @show-modal="showModal"
+        @close="closeModal"
+        @add-contact="addContact"
+      />
+    </Transition>
+    <Transition>
+      <ContactsList
+        v-if="!modalVisible"
+        :contacts="contacts"
+        @show-modal="showModal"
+        @delete-contact="deleteContact"
+      />
+    </Transition>
   </main>
 </template>
 
@@ -74,3 +78,15 @@ export default {
   }
 }
 </script>
+
+<style>
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
+</style>
