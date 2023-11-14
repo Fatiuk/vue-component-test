@@ -4,7 +4,9 @@
       <div
         class="absolute inset-0 bg-gradient-to-r from-green-300 to-emerald-600 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl"
       ></div>
-      <div class="relative px-4 py-10 bg-white dark:bg-stone-800 shadow-lg sm:rounded-3xl sm:p-20">
+      <div
+        class="relative px-4 py-10 bg-stone-100 dark:bg-stone-800 shadow-lg sm:rounded-3xl sm:p-20"
+      >
         <div class="max-w-md mx-auto">
           <div>
             <h1 class="text-2xl font-semibold">Login Form with Floating Labels</h1>
@@ -86,9 +88,7 @@ export default {
     addContact() {
       if (!this.isFormInvalid) {
         this.newContact.id = nanoid()
-
         this.$emit('add-contact', this.newContact)
-
         this.newContact = {
           id: null,
           name: '',

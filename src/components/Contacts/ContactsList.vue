@@ -1,6 +1,6 @@
 <template>
   <div
-    class="max-w-lg mx-auto my-10 bg-white dark:bg-stone-800 p-8 rounded-xl shadow shadow-stone-300"
+    class="max-w-lg mx-auto my-10 bg-stone-100 dark:bg-stone-800 p-8 rounded-xl shadow shadow-stone-300"
   >
     <div class="flex flex-row justify-between items-center">
       <div>
@@ -26,7 +26,12 @@
       >
         <p class="text-stone-500">{{ contact.name }}</p>
         <p class="text-stone-500">{{ contact.number }}</p>
-        <button>Delete</button>
+        <button
+          @click="deleteContact(contact.id)"
+          class="p-2 border border-stone-200 rounded-md inline-flex space-x-1 items-center hover:bg-red-700 hover:bg-opacity-50 text-sm md:block"
+        >
+          Delete
+        </button>
       </div>
     </div>
     <p class="text-xs text-stone-500 text-center">Last updated 12 minutes ago</p>
@@ -44,6 +49,10 @@ export default {
   methods: {
     showModal() {
       this.$emit('show-modal')
+    },
+
+    deleteContact(id) {
+      this.$emit('delete-contact', id)
     }
   }
 }

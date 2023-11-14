@@ -6,7 +6,12 @@
       @close="closeModal"
       @add-contact="addContact"
     />
-    <ContactsList v-else :contacts="contacts" @show-modal="showModal" />
+    <ContactsList
+      v-else
+      :contacts="contacts"
+      @show-modal="showModal"
+      @delete-contact="deleteContact"
+    />
   </main>
 </template>
 
@@ -43,6 +48,13 @@ export default {
 
     addContact(contact) {
       this.contacts.push(contact)
+    },
+
+    deleteContact(id) {
+      const index = this.contacts.findIndex((contact) => contact.id === id)
+      if (index !== -1) {
+        this.contacts.splice(index, 1)
+      }
     }
   }
 }

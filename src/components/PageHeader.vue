@@ -6,7 +6,7 @@
     :ellipsis="false"
     :router="true"
   >
-    <el-menu-item>
+    <el-menu-item class="text-black dark:text-stone-500">
       <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="28" height="28" />
       <h1>Project</h1>
     </el-menu-item>
