@@ -1,9 +1,5 @@
 <template>
-  <div
-    v-if="show"
-    class="min-h-screen py-6 flex flex-col justify-center sm:py-12"
-    @click.stop="closeModal"
-  >
+  <div class="min-h-screen py-6 flex flex-col justify-center sm:py-12" @click.stop="closeModal">
     <div class="relative py-3 sm:max-w-xl sm:mx-auto" @click.stop>
       <div
         class="absolute inset-0 bg-gradient-to-r from-green-300 to-emerald-600 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl"
@@ -78,12 +74,6 @@ export default {
       }
     }
   },
-  props: {
-    show: {
-      type: Boolean,
-      default: false
-    }
-  },
   computed: {
     isFormInvalid() {
       return !this.newContact.name || !this.newContact.number
@@ -104,6 +94,7 @@ export default {
           name: '',
           number: ''
         }
+        this.closeModal()
       }
     }
   }

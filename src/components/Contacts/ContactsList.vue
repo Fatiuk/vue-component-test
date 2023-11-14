@@ -4,7 +4,7 @@
   >
     <div class="flex flex-row justify-between items-center">
       <div>
-        <h1 class="text-3xl font-medium">Tasks list</h1>
+        <h1 class="text-3xl font-medium">Contacts list</h1>
       </div>
       <div class="inline-flex space-x-2 items-center">
         <button
@@ -15,7 +15,7 @@
         </button>
       </div>
     </div>
-    <p class="text-stone-500">Hello, here are your latest tasks</p>
+    <p class="text-stone-500">Hello, here are your latest contacts</p>
 
     <div id="tasks" class="my-5">
       <!-- Render contacts dynamically using v-for -->

@@ -1,12 +1,12 @@
 <template>
   <main>
     <ContactsForm
-      :show="modalVisible"
+      v-if="modalVisible"
       @show-modal="showModal"
       @close="closeModal"
       @add-contact="addContact"
     />
-    <ContactsList :contacts="contacts" @show-modal="showModal" />
+    <ContactsList v-else :contacts="contacts" @show-modal="showModal" />
   </main>
 </template>
 
