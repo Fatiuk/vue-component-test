@@ -24,6 +24,7 @@ export default {
     ContactsForm,
     ContactsList
   },
+
   data() {
     return {
       contacts: [
@@ -35,19 +36,28 @@ export default {
       modalVisible: false
     }
   },
+
+  mounted() {
+    const savedContacts = localStorage.getItem('contacts')
+    if (savedContacts) {
+      this.contacts = JSON.parse(savedContacts)
+    } else {
+      this.saveContactsToLocal()
+    }
+  },
+
   methods: {
     showModal() {
       this.modalVisible = true
-      if (this.modalVisible) {
-        window.scrollTo({ top: 0, behavior: 'smooth' })
-      }
     },
+
     closeModal() {
       this.modalVisible = false
     },
 
     addContact(contact) {
       this.contacts.push(contact)
+      this.saveContactsToLocal()
     },
 
     deleteContact(id) {
@@ -55,9 +65,12 @@ export default {
       if (index !== -1) {
         this.contacts.splice(index, 1)
       }
+      this.saveContactsToLocal()
+    },
+
+    saveContactsToLocal() {
+      localStorage.setItem('contacts', JSON.stringify(this.contacts))
     }
   }
 }
 </script>
-
-<style lang="scss" scoped></style>
